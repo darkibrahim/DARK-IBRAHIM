@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+  DARK-IBRAHIM - Local AI Software & APK Builder
+  Developer : DARK IBRAHIM
+  Title     : Bug Bounty Hunter & Cyber Security Expert
+  Facebook  : https://www.facebook.com/profile.php?id=61580661413217
+  GitHub    : https://github.com/darkibrahim
+  Telegram  : @Hunter_1B4H14
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DARK-IBRAHIM — Local AI Software &amp; APK Builder</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <pre class="banner" aria-label="DARK IBRAHIM"> ____    _    ____  _  __   ___ ____  ____      _    _   _ ___ __  __
+|  _ \  / \  |  _ \| |/ /  |_ _| __ )|  _ \    / \  | | | |_ _|  \/  |
+| | | |/ _ \ | |_) | ' /    | ||  _ \| |_) |  / _ \ | |_| || || |\/| |
+| |_| / ___ \|  _ <| . \    | || |_) |  _ <  / ___ \|  _  || || |  | |
+|____/_/   \_\_| \_\_|\_\  |___|____/|_| \_\/_/   \_\_| |_|___|_|  |_|</pre>
+    <dl class="brand">
+      <dt>Developer</dt><dd>DARK IBRAHIM</dd>
+      <dt>Title</dt><dd>Bug Bounty Hunter &amp; Cyber Security Expert</dd>
+      <dt>Facebook</dt><dd><a href="https://www.facebook.com/profile.php?id=61580661413217" target="_blank" rel="noopener noreferrer">facebook.com/profile.php?id=61580661413217</a></dd>
+      <dt>GitHub</dt><dd><a href="https://github.com/darkibrahim" target="_blank" rel="noopener noreferrer">github.com/darkibrahim</a></dd>
+      <dt>Telegram</dt><dd>@Hunter_1B4H14</dd>
+    </dl>
+  </header>
+
+  <div class="status" id="status" role="status" aria-live="polite">
+    <span class="chip" id="chip-ollama">Ollama: checking…</span>
+    <span class="chip" id="chip-model">Model: –</span>
+    <span class="chip" id="chip-android">Android build tools: checking…</span>
+  </div>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="new-title">
+      <h2 id="new-title">New project</h2>
+      <form id="build-form" autocomplete="off">
+        <label for="prompt">What should it build?</label>
+        <textarea id="prompt" rows="6" maxlength="4000" required
+          placeholder="Example: A Flask dashboard that shows notes and lets me add new ones"></textarea>
+
+        <label for="name">Project name <small>(optional)</small></label>
+        <input id="name" maxlength="50" placeholder="my-notes-app">
+
+        <div class="row">
+          <div>
+            <label for="type">Type</label>
+            <select id="type">
+              <option value="">Detect automatically</option>
+              <option value="python-cli">Python command-line tool</option>
+              <option value="flask-web">Flask web app</option>
+              <option value="static-website">Static website</option>
+              <option value="android-app">Android app (APK)</option>
+            </select>
+          </div>
+          <div>
+            <label for="mode">Engine</label>
+            <select id="mode">
+              <option value="auto">Auto (AI if available)</option>
+              <option value="ai">AI only (Ollama)</option>
+              <option value="template">Offline templates</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="model">AI model</label>
+        <select id="model"><option value="">Default</option></select>
+
+        <button type="submit" id="build-btn" class="primary">Build project</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="out-title">
+      <h2 id="out-title">Build log</h2>
+      <pre id="log" class="terminal" tabindex="0">Waiting for a project…</pre>
+
+      <div id="result" class="result" hidden>
+        <h3 id="result-title"></h3>
+        <p id="result-meta"></p>
+        <div class="actions">
+          <a id="download" class="button primary" href="#">Download ZIP</a>
+          <button type="button" id="apk-btn" class="secondary" hidden>Build Android project / APK</button>
+        </div>
+        <ul id="checks" class="checks"></ul>
+        <div id="apk-result" class="apk-result" hidden></div>
+        <h3>Files</h3>
+        <div class="files-wrap">
+          <ul id="files" class="files"></ul>
+          <pre id="preview" class="preview" tabindex="0">Select a file to preview it.</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="panel history" aria-labelledby="hist-title">
+    <h2 id="hist-title">History</h2>
+    <ul id="history" class="history-list"><li class="muted">No projects yet.</li></ul>
+  </section>
+
+  <footer>
+    <span>DARK-IBRAHIM v<span id="version">1.0.0</span> · Developer: DARK IBRAHIM · @Hunter_1B4H14</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
